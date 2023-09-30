@@ -18,8 +18,6 @@ exports.signupHandler = async (req, res) => {
     res.status(201).json(signup);
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: "Internal Server Error", details: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
